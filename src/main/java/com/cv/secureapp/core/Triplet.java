@@ -1,7 +1,11 @@
 package com.cv.secureapp.core;
 
-import java.io.Serializable;
-
+/**
+ * Helper class to work with triplet heterogeneous objects.
+ * @param <T1> first object of type T1
+ * @param <T2> Second object of type T2
+ * @param <T3> third object of type T3
+ */
 public class Triplet<T1, T2, T3> {
 
     private final T1 $1;
@@ -26,6 +30,13 @@ public class Triplet<T1, T2, T3> {
         return $3;
     }
 
+    /**
+     * Helper static method to create Triplet Instance
+     * @param first
+     * @param second
+     * @param third
+     * @return
+     */
     public static <T1, T2, T3>Triplet<T1, T2, T3> with(T1 first, T2 second, T3 third){
         return new Triplet<T1, T2, T3>(first,second,third);
     }

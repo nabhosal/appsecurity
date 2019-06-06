@@ -2,14 +2,12 @@ package com.cv.secureapp.test;
 
 import com.cv.secureapp.core.CertificateBuilder;
 import com.cv.secureapp.core.SecurityContext;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.time.LocalDateTime;
 
 import static junit.framework.TestCase.assertFalse;
@@ -77,6 +75,25 @@ public class TestSecurityContext {
             Thread.sleep(2 * 60 * 1000L); // Sleep for 2 minute and the check
             assertTrue( SecurityContext.isCertificateValid());
             assertFalse("It should give runtime expection Certificate Expired on ", false);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void certificate_validity_on_larger_timeframe(){
+
+        String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusMinutes(4)+"||2019-06-05T12:59:27.298";
+        try {
+            String certificateContent = CertificateBuilder.encrypt(rawdata, PRIVATE_KEY);
+            String certificatePath = createTempCertificate(certificateContent);
+            System.setProperty("cv.secureapp.certificate", certificatePath);
+            Thread.sleep(2 * 60 * 1000L); // Sleep for 2 minute and the check
+            assertTrue( SecurityContext.isCertificateValid());
+            assertFalse("It should give runtime expection `Certificate Expired on` ", false);
+            Thread.sleep(2 * 60 * 1000L); // Again sleep for 2 minute and the check
+            assertTrue( SecurityContext.isCertificateValid());
 
         } catch (Exception e) {
             e.printStackTrace();

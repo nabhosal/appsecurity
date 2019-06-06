@@ -12,6 +12,23 @@ import java.util.Base64;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+/**
+ * Its is builder class used for handling certificates, it takes care of RSA based encryption/decryption for building
+ * certificates.
+ * It encrypt data using private key, and use public key for decryption. We cannot use Java native Signature verify
+ * since it require both signature and uncipher data to be shared
+ *
+ * How to build Certificate
+ *   Triplet certificate =  CertificateBuilder.getInstance().buildCertificateForData(String rawdata)
+ *
+ *   $1 is public key, replace SecurityContext.PUBLIC_KEY to $1
+ *   $2 is private key, save privateKey for future reference
+ *   $3 is cipher certificate
+ *
+ * Creating new Certificate
+ *   String cipherCertificate = CertificateBuilder.encrypt(String rawdata, String privateKey);
+ *
+ */
 public class CertificateBuilder {
 
     private PrivateKey privateKey;
@@ -43,6 +60,13 @@ public class CertificateBuilder {
         return publicKey;
     }
 
+    /**
+     *  Given Base64 encoded publickey in string, it will convert into X509 encoded public key
+     * @param publicKeyContent public key in encoded format
+     * @return
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeySpecException
+     */
     public static PublicKey getPublicKeyFromText(String publicKeyContent) throws NoSuchAlgorithmException, InvalidKeySpecException {
 
         KeyFactory kf = KeyFactory.getInstance("RSA");
@@ -51,6 +75,13 @@ public class CertificateBuilder {
         return pubKey;
     }
 
+    /**
+     *  Given Base64 encoded privatekey in string, it will convert into PKCS8 encoded private key
+     * @param privateKeyContent private key in encoded format
+     * @return
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeySpecException
+     */
     public static PrivateKey getPrivateKeyFromText(String privateKeyContent) throws NoSuchAlgorithmException, InvalidKeySpecException {
 
         KeyFactory kf = KeyFactory.getInstance("RSA");
@@ -93,6 +124,19 @@ public class CertificateBuilder {
         return getDataField(Base64.getDecoder().decode(certificate), publicKey, delimiter, fieldIndex);
     }
 
+    /**
+     *  Extract specific data from encrypted certificate using delimiter and fieldindex for handling certificate
+     *  internal shuffling
+     *  String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||2019-06-05T12:59:27.298||2019-06-04T18:30:27.298";
+     *  give delimiter = || & fieldIndex = 3
+     *  getDataField method return 2019-06-05T12:59:27.298
+     *
+     * @param certificate encrypted certficate content
+     * @param publicKey key to decrypt the certificate
+     * @param delimiter internal to certificate content shuffling
+     * @param fieldIndex internal to certificate content shuffling
+     * @return
+     */
     public static String getDataField(byte []certificate, PublicKey publicKey, String delimiter, int fieldIndex){
         String unCipherData = "";
         try {
@@ -118,13 +162,18 @@ public class CertificateBuilder {
         return certificateBuilder;
     }
 
-    public Triplet buildCertificateForData(String rawdata){
+    /**
+     * It build certificate with public, private & cipher certificate content
+     * @param content certificate content
+     * @return
+     */
+    public Triplet buildCertificateForData(String content){
 
         Triplet<String, String, String> certificate = null;
         try {
             CertificateBuilder keyPairGenerator = new CertificateBuilder();
 
-            String cipher = CertificateBuilder.encrypt(rawdata, keyPairGenerator.getPrivateKey());
+            String cipher = CertificateBuilder.encrypt(content, keyPairGenerator.getPrivateKey());
             String publicKey = Base64.getEncoder().encodeToString(keyPairGenerator.getPublicKey().getEncoded());
             String privateKey = Base64.getEncoder().encodeToString(keyPairGenerator.getPrivateKey().getEncoded());
 
@@ -155,9 +204,9 @@ public class CertificateBuilder {
             String publicKey = Base64.getEncoder().encodeToString(keyPairGenerator.getPublicKey().getEncoded());
             System.out.println("public "+publicKey);
             String decipher = CertificateBuilder.decrypt(cipher, CertificateBuilder.getPublicKeyFromText(publicKey));
-            System.out.println("Certifcate "+cipher);
+            System.out.println("Certificate "+cipher);
 //            System.out.println("#rd Field "+CertificateBuilder.getDataField(cipher, keyPairGenerator.getPublicKey(), "\\|\\|", 3));
-            System.out.println("#rd Field "+CertificateBuilder.getDataField(cipher, CertificateBuilder.getPublicKeyFromText(publicKey), "\\|\\|", 3));
+            System.out.println("Extracted Field "+CertificateBuilder.getDataField(cipher, CertificateBuilder.getPublicKeyFromText(publicKey), "\\|\\|", 3));
         } catch (Exception e) {
             e.printStackTrace();
         }

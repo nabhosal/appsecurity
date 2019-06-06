@@ -37,17 +37,4 @@ public class TestCertificate {
         assertEquals("2019-06-04T18:30:27.298", TcertDate);
     }
 
-    @Test
-    public void test(){
-        System.out.println("||"+ LocalDateTime.now().plusMinutes(3) +"||");
-
-        try {
-            File tempFile = File.createTempFile("CERT-",".cipher");
-            System.out.println(tempFile.getAbsolutePath());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
 }
