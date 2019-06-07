@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b39e6fd-249f-4a87-a600-cb195a1abc0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/Triplet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/Triplet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/ProxyAccessibleClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/ProxyAccessibleClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,13 +32,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10950" />
+          <entry key="java" value="11311" />
+          <entry key="md" value="502" />
           <entry key="xml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10950" />
+          <entry key="JAVA" value="11317" />
+          <entry key="Markdown" value="496" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
@@ -54,6 +49,7 @@
           <entry key="cipher" value="5" />
           <entry key="class" value="1" />
           <entry key="java" value="25" />
+          <entry key="md" value="1" />
           <entry key="publicKey" value="1" />
           <entry key="xml" value="2" />
         </counts>
@@ -62,6 +58,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="JAVA" value="25" />
+          <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="XML" value="2" />
         </counts>
@@ -73,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="95" column="62" selection-start-line="95" selection-start-column="62" selection-end-line="95" selection-end-column="62" />
+            <state relative-caret-position="199">
+              <caret line="75" column="60" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="166" column="21" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
+            <state relative-caret-position="-519">
+              <caret line="176" column="29" selection-start-line="176" selection-start-column="29" selection-end-line="176" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1133#1134#0" expanded="true" />
@@ -101,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
+            <state relative-caret-position="449">
+              <caret line="30" column="146" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="146" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,11 +132,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="54" column="42" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="42" />
+            <state relative-caret-position="217">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#9923#9924#0" expanded="true" />
+                <element signature="e#9954#9955#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="340">
+                <caret line="37" column="17" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="17" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -179,9 +190,10 @@
         <option value="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/Triplet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/ProxyAccessibleClass.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -192,11 +204,22 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="41" />
-    <option name="y" value="18" />
-    <option name="width" value="1325" />
-    <option name="height" value="750" />
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="app-security" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1503" />
+    <option name="y" value="183" />
+    <option name="width" value="1622" />
+    <option name="height" value="915" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -319,7 +342,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559838265504" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559885802400" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -342,8 +365,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestSecurityContext.certificate_validity_larger_timeframe">
-    <configuration name="TestSecurityContext" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestSecurityContext.certificate_validity_on_larger_timeframe">
+    <configuration name="TestSecurityContext.certificate_validity_on_larger_timeframe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="appsecurity" />
       <extension name="coverage">
         <pattern>
@@ -353,21 +376,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cv.secureapp.test" />
       <option name="MAIN_CLASS_NAME" value="com.cv.secureapp.test.TestSecurityContext" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestSecurityContext.certificate_validity_larger_timeframe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="appsecurity" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cv.secureapp.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cv.secureapp.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cv.secureapp.test.TestSecurityContext" />
-      <option name="METHOD_NAME" value="certificate_validity_larger_timeframe" />
+      <option name="METHOD_NAME" value="certificate_validity_on_larger_timeframe" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -405,6 +414,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestSecurityContext.check_expire_certificate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appsecurity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cv.secureapp.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cv.secureapp.test" />
+      <option name="MAIN_CLASS_NAME" value="com.cv.secureapp.test.TestSecurityContext" />
+      <option name="METHOD_NAME" value="check_expire_certificate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestSecurityContext.check_initialization" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="appsecurity" />
       <extension name="coverage">
@@ -423,18 +448,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.TestSecurityContext.check_initialization" />
+      <item itemvalue="JUnit.TestSecurityContext.check_expire_certificate" />
       <item itemvalue="JUnit.TestSecurityContext.certificate_validity_within_timeframe" />
       <item itemvalue="JUnit.TestSecurityContext.certificate_validity_outside_timeframe" />
-      <item itemvalue="JUnit.TestSecurityContext" />
-      <item itemvalue="JUnit.TestSecurityContext.certificate_validity_larger_timeframe" />
+      <item itemvalue="JUnit.TestSecurityContext.certificate_validity_on_larger_timeframe" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSecurityContext.certificate_validity_larger_timeframe" />
-        <item itemvalue="JUnit.TestSecurityContext" />
-        <item itemvalue="JUnit.TestSecurityContext.check_initialization" />
+        <item itemvalue="JUnit.TestSecurityContext.certificate_validity_on_larger_timeframe" />
         <item itemvalue="JUnit.TestSecurityContext.certificate_validity_outside_timeframe" />
         <item itemvalue="JUnit.TestSecurityContext.certificate_validity_within_timeframe" />
+        <item itemvalue="JUnit.TestSecurityContext.check_expire_certificate" />
+        <item itemvalue="JUnit.TestSecurityContext.check_initialization" />
       </list>
     </recent_temporary>
   </component>
@@ -452,21 +477,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSecurityContext_check_expire_certificate - 2019.06.06 at 15h 54m 58s.xml">
-      <configuration name="TestSecurityContext.check_expire_certificate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestSecurityContext_check_expire_certificate - 2019.06.06 at 15h 55m 37s.xml">
-      <configuration name="TestSecurityContext.check_expire_certificate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_within_timeframe - 2019.06.06 at 16h 01m 05s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_within_timeframe" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_outside_timeframe - 2019.06.06 at 16h 04m 37s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_outside_timeframe" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestSecurityContext - 2019.06.06 at 16h 05m 52s.xml">
-      <configuration name="TestSecurityContext" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestSecurityContext_check_initialization - 2019.06.06 at 16h 05m 58s.xml">
       <configuration name="TestSecurityContext.check_initialization" configurationId="JUnit" />
     </history-entry>
@@ -482,12 +492,27 @@
     <history-entry file="TestSecurityContext_certificate_validity_larger_timeframe - 2019.06.06 at 17h 57m 24s.xml">
       <configuration name="TestSecurityContext.certificate_validity_larger_timeframe" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestSecurityContext_check_initialization - 2019.06.07 at 09h 57m 02s.xml">
+      <configuration name="TestSecurityContext.check_initialization" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestSecurityContext_check_expire_certificate - 2019.06.07 at 09h 57m 09s.xml">
+      <configuration name="TestSecurityContext.check_expire_certificate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestSecurityContext_certificate_validity_within_timeframe - 2019.06.07 at 09h 59m 18s.xml">
+      <configuration name="TestSecurityContext.certificate_validity_within_timeframe" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestSecurityContext_certificate_validity_outside_timeframe - 2019.06.07 at 09h 59m 34s.xml">
+      <configuration name="TestSecurityContext.certificate_validity_outside_timeframe" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestSecurityContext_certificate_validity_on_larger_timeframe - 2019.06.07 at 10h 01m 40s.xml">
+      <configuration name="TestSecurityContext.certificate_validity_on_larger_timeframe" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="18" width="1325" height="750" extended-state="4" />
+    <frame x="1503" y="183" width="1622" height="915" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23154624" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.061868686" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -496,7 +521,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22035794" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33542714" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -511,9 +536,9 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.22677925" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.22677925" />
+      <window_info anchor="right" id="Maven Projects" order="8" side_tool="true" weight="0.32954547" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -564,16 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="95" column="62" selection-start-line="95" selection-start-column="62" selection-end-line="95" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/accessibleinterface/AccessibleClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -599,20 +614,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="54" column="42" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
+        <state relative-caret-position="449">
+          <caret line="30" column="146" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="146" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -621,8 +626,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="166" column="21" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
+        <state relative-caret-position="-519">
+          <caret line="176" column="29" selection-start-line="176" selection-start-column="29" selection-end-line="176" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1133#1134#0" expanded="true" />
@@ -630,6 +635,38 @@
             <element signature="e#1205#1206#0" expanded="true" />
             <element signature="e#1237#1238#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9923#9924#0" expanded="true" />
+            <element signature="e#9954#9955#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="75" column="60" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="340">
+            <caret line="37" column="17" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="17" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

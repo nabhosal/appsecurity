@@ -51,6 +51,14 @@ public class SecurityContext implements Cloneable, Serializable {
     /* for adding exponential time delay between each retry */
     private static final int SEED_EXPONENTIAL_FACTOR = 3;
 
+    /**
+     * Set Periodic interval to refresh TApp time
+     * e.g.  Every Minute = 1000L * 60L
+     *       Hourly       = 1000L * 60L * 60L
+     *       Daily        = 1000L * 60L * 60L * 24L
+     */
+    private static final long PERIODIC_INTERVAL = 1000L * 60L;
+
     /* Hardcode Public Key, When certificate is build Change public key with certificate public key */
     private static final String PUBLIC_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCk4vW6YW0U6dasZFS2VqQGVlUmqxiVxwL7yTwTqRZdoKPYHUbTwt+IfkTdnS3w+UjtVB2H1xW9ACmz0kSxbYDjyhZZ7ZMlFg6dOom8LE7Lw4a2grVlI2Qd+D91n+HWJ0/5OIPCs67CrkmoQU/deSv39Kqcp46m3qs9eD4389zNiQIDAQAB";
 
@@ -117,8 +125,8 @@ public class SecurityContext implements Cloneable, Serializable {
 
             long delay = 1000L;
             // long period = 1000L * 60L * 60L; // Hourly
-            long period = 1000L * 60L;         // Every Minute
-            timer.scheduleAtFixedRate(repeatedTask, delay, period);
+//            long period = 1000L * 60L;         // Every Minute
+            timer.scheduleAtFixedRate(repeatedTask, delay, PERIODIC_INTERVAL);
         }
 
         private boolean isCertificateValid(){
@@ -176,7 +184,7 @@ public class SecurityContext implements Cloneable, Serializable {
                 }
 
                 try {
-                    if(retryCount == SEED_EXPONENTIAL_FACTOR)
+                    if(retryCount == MAX_RETRY_ATTEMP)
                         break;
                     Thread.sleep(1000L * (retryCount+factor));
                 } catch (InterruptedException e) {
@@ -251,5 +259,18 @@ public class SecurityContext implements Cloneable, Serializable {
             tAppTime.isValid = true;
         }
     }
+    // Enabling SecurityContext, a singleton class safe reflection based attack
+    // implement readResolve method
+    protected Object readResolve()
+    {
+        return context;
+    }
+    @Override
+    protected Object clone() throws CloneNotSupportedException
+    {
+        // throw new CloneNotSupportedException();
+        return context;
+    }
+
 
 }
