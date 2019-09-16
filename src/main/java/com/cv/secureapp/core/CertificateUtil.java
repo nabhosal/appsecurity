@@ -19,22 +19,22 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * since it require both signature and uncipher data to be shared
  *
  * How to build Certificate
- *   Triplet certificate =  CertificateBuilder.getInstance().buildCertificateForData(String rawdata)
+ *   Triplet certificate =  CertificateUtil.getInstance().buildCertificateForData(String rawdata)
  *
  *   $1 is public key, replace SecurityContext.PUBLIC_KEY to $1
  *   $2 is private key, save privateKey for future reference
  *   $3 is cipher certificate
  *
  * Creating new Certificate
- *   String cipherCertificate = CertificateBuilder.encrypt(String rawdata, String privateKey);
+ *   String cipherCertificate = CertificateUtil.encrypt(String rawdata, String privateKey);
  *
  */
-public class CertificateBuilder {
+public class CertificateUtil {
 
     private PrivateKey privateKey;
     private PublicKey publicKey;
 
-    public CertificateBuilder() throws NoSuchAlgorithmException {
+    public CertificateUtil() throws NoSuchAlgorithmException {
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
         keyGen.initialize(1024);
         KeyPair pair = keyGen.generateKeyPair();
@@ -150,16 +150,37 @@ public class CertificateBuilder {
         return fieldValue;
     }
 
-    public static CertificateBuilder getInstance(){
-        CertificateBuilder certificateBuilder = null;
+    /**
+     *  Return decrypted certificate content
+     *
+     * @param certificate encrypted certificate content
+     * @param publicKey key to decrypt the certificate
+     * @param delimiter internal to certificate content shuffling
+     * @param fieldIndex internal to certificate content shuffling
+     * @return
+     */
+    public static String getCertificateContent(byte []certificate, PublicKey publicKey, String delimiter, int fieldIndex){
+        String unCipherData = "";
         try {
-            certificateBuilder = new CertificateBuilder();
+            unCipherData = decrypt(certificate, publicKey);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Not able to decrypt certificate using public key");
+        }
+
+        return unCipherData;
+    }
+
+    public static CertificateUtil getInstance(){
+        CertificateUtil certificateUtil = null;
+        try {
+            certificateUtil = new CertificateUtil();
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-            System.out.println("CertificateBuilder: No Such Algo found");
-            throw new RuntimeException("CertificateBuilder: No Such Algo found");
+            System.out.println("CertificateUtil: No Such Algo found");
+            throw new RuntimeException("CertificateUtil: No Such Algo found");
         }
-        return certificateBuilder;
+        return certificateUtil;
     }
 
     /**
@@ -171,9 +192,9 @@ public class CertificateBuilder {
 
         Triplet<String, String, String> certificate = null;
         try {
-            CertificateBuilder keyPairGenerator = new CertificateBuilder();
+            CertificateUtil keyPairGenerator = new CertificateUtil();
 
-            String cipher = CertificateBuilder.encrypt(content, keyPairGenerator.getPrivateKey());
+            String cipher = CertificateUtil.encrypt(content, keyPairGenerator.getPrivateKey());
             String publicKey = Base64.getEncoder().encodeToString(keyPairGenerator.getPublicKey().getEncoded());
             String privateKey = Base64.getEncoder().encodeToString(keyPairGenerator.getPrivateKey().getEncoded());
 
@@ -193,20 +214,20 @@ public class CertificateBuilder {
     public static void main(String[] args) throws NoSuchAlgorithmException, IOException {
 
         String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||2019-06-05T12:59:27.298||2019-06-04T18:30:27.298";
-        CertificateBuilder keyPairGenerator = new CertificateBuilder();
+        CertificateUtil keyPairGenerator = new CertificateUtil();
 //        keyPairGenerator.writeToFile("Certificate/publicKey", keyPairGenerator.getPublicKey().getEncoded());
 //        keyPairGenerator.writeToFile("Certificate/privateKey", keyPairGenerator.getPrivateKey().getEncoded());
 //        System.out.println("Private Key "+Base64.getEncoder().encodeToString(keyPairGenerator.getPublicKey().getEncoded()));
 //        System.out.println("Public Key "+Base64.getEncoder().encodeToString(keyPairGenerator.getPrivateKey().getEncoded()));
 
         try {
-            String cipher = CertificateBuilder.encrypt(rawdata, keyPairGenerator.getPrivateKey());
+            String cipher = CertificateUtil.encrypt(rawdata, keyPairGenerator.getPrivateKey());
             String publicKey = Base64.getEncoder().encodeToString(keyPairGenerator.getPublicKey().getEncoded());
             System.out.println("public "+publicKey);
-            String decipher = CertificateBuilder.decrypt(cipher, CertificateBuilder.getPublicKeyFromText(publicKey));
+            String decipher = CertificateUtil.decrypt(cipher, CertificateUtil.getPublicKeyFromText(publicKey));
             System.out.println("Certificate "+cipher);
-//            System.out.println("#rd Field "+CertificateBuilder.getDataField(cipher, keyPairGenerator.getPublicKey(), "\\|\\|", 3));
-            System.out.println("Extracted Field "+CertificateBuilder.getDataField(cipher, CertificateBuilder.getPublicKeyFromText(publicKey), "\\|\\|", 3));
+//            System.out.println("#rd Field "+CertificateUtil.getDataField(cipher, keyPairGenerator.getPublicKey(), "\\|\\|", 3));
+            System.out.println("Extracted Field "+ CertificateUtil.getDataField(cipher, CertificateUtil.getPublicKeyFromText(publicKey), "\\|\\|", 3));
         } catch (Exception e) {
             e.printStackTrace();
         }

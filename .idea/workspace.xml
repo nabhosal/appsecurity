@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b39e6fd-249f-4a87-a600-cb195a1abc0e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContextBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/impl/DelimitedCertificateFormatImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSCBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/accessibleinterface/AccessibleClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/ProxyAccessibleClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,42 +36,49 @@
     <session id="-1213832005">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="11311" />
-          <entry key="md" value="502" />
-          <entry key="xml" value="9" />
+          <entry key="dummy" value="14" />
+          <entry key="java" value="15278" />
+          <entry key="md" value="503" />
+          <entry key="xml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11317" />
-          <entry key="Markdown" value="496" />
-          <entry key="XML" value="9" />
+          <entry key="JAVA" value="15284" />
+          <entry key="Markdown" value="497" />
+          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="XML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cipher" value="5" />
           <entry key="class" value="1" />
-          <entry key="java" value="25" />
+          <entry key="java" value="45" />
           <entry key="md" value="1" />
           <entry key="publicKey" value="1" />
-          <entry key="xml" value="2" />
+          <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="25" />
+          <entry key="JAVA" value="45" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="XML" value="2" />
+          <entry key="XML" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -68,98 +86,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/impl/DelimitedCertificateFormatImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="75" column="60" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="60" />
+            <state relative-caret-position="492">
+              <caret line="29" column="66" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-519">
-              <caret line="176" column="29" selection-start-line="176" selection-start-column="29" selection-end-line="176" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1133#1134#0" expanded="true" />
-                <element signature="e#1166#1167#0" expanded="true" />
-                <element signature="e#1205#1206#0" expanded="true" />
-                <element signature="e#1237#1238#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="30" column="146" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="146" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/accessibleinterface/AccessibleClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-              <folding>
-                <element signature="e#177#178#0" expanded="true" />
-                <element signature="e#223#224#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/ProxyAccessibleClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#9923#9924#0" expanded="true" />
-                <element signature="e#9954#9955#0" expanded="true" />
+                <element signature="e#422#423#0" expanded="true" />
+                <element signature="e#449#450#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="340">
-                <caret line="37" column="17" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="17" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="51" column="55" selection-start-line="51" selection-start-column="55" selection-end-line="51" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/Triplet.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
+            <state relative-caret-position="339">
+              <caret line="161" column="46" selection-start-line="161" selection-start-column="25" selection-end-line="161" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContextBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="42" column="49" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="49" />
+              <folding>
+                <element signature="e#1597#1598#0" expanded="true" />
+                <element signature="e#1637#1638#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -169,9 +141,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>CertificateUt</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -183,17 +161,23 @@
         <option value="$PROJECT_DIR$/src/test/resources/CERT02.cipher" />
         <option value="$PROJECT_DIR$/src/test/resources/CERT.cipher" />
         <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/SecurityContext.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/Triplet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/CertificateBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/accessibleinterface/AccessibleClass.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/Triplet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/ProxyAccessibleClass.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/SC.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSCBuilder.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateFormat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/impl/DelimitedCertificateFormatImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContextBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java" />
       </list>
     </option>
   </component>
@@ -215,11 +199,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1503" />
-    <option name="y" value="183" />
-    <option name="width" value="1622" />
-    <option name="height" value="915" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="55" />
+    <option name="y" value="-4" />
+    <option name="width" value="1311" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -241,6 +225,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,24 +258,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="secureapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appsecurity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appsecurity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="secureapp" type="462c0819:PsiDirectoryNode" />
-              <item name="accessibleinterface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appsecurity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appsecurity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="secureapp" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -298,8 +266,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="secureapp" type="462c0819:PsiDirectoryNode" />
-              <item name="obfuscateInterface" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appsecurity" type="b2602c69:ProjectViewProjectNode" />
@@ -337,12 +305,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559885802400" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568644287933" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -365,8 +331,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestSecurityContext.certificate_validity_on_larger_timeframe">
-    <configuration name="TestSecurityContext.certificate_validity_on_larger_timeframe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestSCBuilder.basicFlow">
+    <configuration name="TestSCBuilder.basicFlow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="appsecurity" />
       <extension name="coverage">
         <pattern>
@@ -375,14 +341,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cv.secureapp.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cv.secureapp.test.TestSecurityContext" />
-      <option name="METHOD_NAME" value="certificate_validity_on_larger_timeframe" />
+      <option name="MAIN_CLASS_NAME" value="com.cv.secureapp.test.TestSCBuilder" />
+      <option name="METHOD_NAME" value="basicFlow" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSecurityContext.certificate_validity_outside_timeframe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSCBuilder.basicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="appsecurity" />
       <extension name="coverage">
         <pattern>
@@ -391,8 +357,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cv.secureapp.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cv.secureapp.test.TestSecurityContext" />
-      <option name="METHOD_NAME" value="certificate_validity_outside_timeframe" />
+      <option name="MAIN_CLASS_NAME" value="com.cv.secureapp.test.TestSCBuilder" />
+      <option name="METHOD_NAME" value="basicTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -447,16 +413,16 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.TestSCBuilder.basicTest" />
+      <item itemvalue="JUnit.TestSCBuilder.basicFlow" />
       <item itemvalue="JUnit.TestSecurityContext.check_initialization" />
       <item itemvalue="JUnit.TestSecurityContext.check_expire_certificate" />
       <item itemvalue="JUnit.TestSecurityContext.certificate_validity_within_timeframe" />
-      <item itemvalue="JUnit.TestSecurityContext.certificate_validity_outside_timeframe" />
-      <item itemvalue="JUnit.TestSecurityContext.certificate_validity_on_larger_timeframe" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSecurityContext.certificate_validity_on_larger_timeframe" />
-        <item itemvalue="JUnit.TestSecurityContext.certificate_validity_outside_timeframe" />
+        <item itemvalue="JUnit.TestSCBuilder.basicFlow" />
+        <item itemvalue="JUnit.TestSCBuilder.basicTest" />
         <item itemvalue="JUnit.TestSecurityContext.certificate_validity_within_timeframe" />
         <item itemvalue="JUnit.TestSecurityContext.check_expire_certificate" />
         <item itemvalue="JUnit.TestSecurityContext.check_initialization" />
@@ -477,42 +443,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSecurityContext_check_initialization - 2019.06.06 at 16h 05m 58s.xml">
-      <configuration name="TestSecurityContext.check_initialization" configurationId="JUnit" />
+    <history-entry file="TestSCBuilder_basicTest - 2019.09.16 at 16h 42m 42s.xml">
+      <configuration name="TestSCBuilder.basicTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext - 2019.06.06 at 16h 08m 07s.xml">
-      <configuration name="TestSecurityContext" configurationId="JUnit" />
+    <history-entry file="TestSCBuilder_basicFlow - 2019.09.16 at 16h 45m 17s.xml">
+      <configuration name="TestSCBuilder.basicFlow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext - 2019.06.06 at 16h 12m 49s.xml">
-      <configuration name="TestSecurityContext" configurationId="JUnit" />
+    <history-entry file="TestSCBuilder_basicFlow - 2019.09.16 at 16h 45m 30s.xml">
+      <configuration name="TestSCBuilder.basicFlow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext - 2019.06.06 at 16h 14m 15s.xml">
-      <configuration name="TestSecurityContext" configurationId="JUnit" />
+    <history-entry file="TestSCBuilder_basicFlow - 2019.09.16 at 16h 45m 43s.xml">
+      <configuration name="TestSCBuilder.basicFlow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_larger_timeframe - 2019.06.06 at 17h 57m 24s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_larger_timeframe" configurationId="JUnit" />
+    <history-entry file="TestSCBuilder_basicFlow - 2019.09.16 at 16h 45m 49s.xml">
+      <configuration name="TestSCBuilder.basicFlow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_check_initialization - 2019.06.07 at 09h 57m 02s.xml">
-      <configuration name="TestSecurityContext.check_initialization" configurationId="JUnit" />
+    <history-entry file="TestSCBuilder_basicFlow - 2019.09.16 at 16h 52m 16s.xml">
+      <configuration name="TestSCBuilder.basicFlow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_check_expire_certificate - 2019.06.07 at 09h 57m 09s.xml">
-      <configuration name="TestSecurityContext.check_expire_certificate" configurationId="JUnit" />
+    <history-entry file="TestSCBuilder_basicFlow - 2019.09.16 at 16h 54m 16s.xml">
+      <configuration name="TestSCBuilder.basicFlow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_within_timeframe - 2019.06.07 at 09h 59m 18s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_within_timeframe" configurationId="JUnit" />
+    <history-entry file="TestSCBuilder_basicFlow - 2019.09.16 at 16h 57m 12s.xml">
+      <configuration name="TestSCBuilder.basicFlow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_outside_timeframe - 2019.06.07 at 09h 59m 34s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_outside_timeframe" configurationId="JUnit" />
+    <history-entry file="TestSCBuilder_basicFlow - 2019.09.16 at 17h 18m 47s.xml">
+      <configuration name="TestSCBuilder.basicFlow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_on_larger_timeframe - 2019.06.07 at 10h 01m 40s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_on_larger_timeframe" configurationId="JUnit" />
+    <history-entry file="TestSCBuilder_basicFlow - 2019.09.16 at 17h 22m 02s.xml">
+      <configuration name="TestSCBuilder.basicFlow" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1503" y="183" width="1622" height="915" extended-state="0" />
+    <frame x="55" y="-4" width="1311" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.061868686" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3611774" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -520,8 +486,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33542714" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965687" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.11602871" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -529,7 +495,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32997763" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3277512" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -575,13 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/security/spec/PKCS8EncodedKeySpec.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -589,84 +548,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/accessibleinterface/AccessibleClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding>
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/ProxyAccessibleClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="264">
+            <caret line="12" column="241" selection-start-line="12" selection-start-column="241" selection-end-line="12" selection-end-column="241" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/Triplet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="594">
           <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/TimerTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/accessibleinterface/AccessibleClass.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/AssertionError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="69" column="72" selection-start-line="69" selection-start-column="72" selection-end-line="69" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/SC.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/ProxyAccessibleClass.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSCBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestCertificate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="30" column="146" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="146" />
+        <state relative-caret-position="418">
+          <caret line="22" column="61" lean-forward="true" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-519">
-          <caret line="176" column="29" selection-start-line="176" selection-start-column="29" selection-end-line="176" selection-end-column="29" />
+        <state relative-caret-position="152">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1133#1134#0" expanded="true" />
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1205#1206#0" expanded="true" />
-            <element signature="e#1237#1238#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9923#9924#0" expanded="true" />
-            <element signature="e#9954#9955#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/cv/secureapp/test/TestSecurityContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="75" column="60" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="60" />
+        <state relative-caret-position="190">
+          <caret line="25" column="62" lean-forward="true" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="340">
-            <caret line="37" column="17" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/CertificateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="161" column="46" selection-start-line="161" selection-start-column="25" selection-end-line="161" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/impl/DelimitedCertificateFormatImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="29" column="66" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContextBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="42" column="49" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="49" />
+          <folding>
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1637#1638#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/core/SecurityContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="51" column="55" selection-start-line="51" selection-start-column="55" selection-end-line="51" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

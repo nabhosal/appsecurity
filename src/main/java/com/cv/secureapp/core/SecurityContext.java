@@ -15,7 +15,6 @@ import java.security.spec.InvalidKeySpecException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -32,24 +31,26 @@ import java.util.TimerTask;
  */
 public class SecurityContext implements Cloneable, Serializable {
 
-    /* System property to get certificate path */
-    private static final String DEFAULT_CERT_SYS_FUNC_NAME = "cv.secureapp.certificate";
 
-    /* System property to get ntp server hostname */
-    private static final String DEFAULT_NTP_FUNC_NAME = "cv.secureapp.ntpserver";
-
-    /* default network server */
-    private static final String DEFAULT_NS_SERVER = "time-a.nist.gov";
+    private static SecurityContext securityContext;
 
     /* Conf for extracting data from Cipher / Certificate */
     private static final String CIPHER_DELIMITER = "\\|\\|";
     private static final int CIPHER_SECURE_FIELD = 3;
 
-    /* Max retry for getting time from ns server */
-    private static final int MAX_RETRY_ATTEMP = 3;
+    /* TApp Context */
+    private final TAppTime context;
 
-    /* for adding exponential time delay between each retry */
-    private static final int SEED_EXPONENTIAL_FACTOR = 3;
+    private SecurityContext(SecurityContextBuilder contextBuilder){
+
+       this.context = new TAppTime(contextBuilder.getNsServer(),
+                contextBuilder.getCertSysFuncName(),
+                contextBuilder.getPeriodicInterval(),
+                contextBuilder.getSeedExponentialFactor(),
+                contextBuilder.getMaxRetryAttempt(),
+                contextBuilder.getPublicKey(),
+                contextBuilder.getCertificateFormat());
+    }
 
     /**
      * Set Periodic interval to refresh TApp time
@@ -57,13 +58,11 @@ public class SecurityContext implements Cloneable, Serializable {
      *       Hourly       = 1000L * 60L * 60L
      *       Daily        = 1000L * 60L * 60L * 24L
      */
-    private static final long PERIODIC_INTERVAL = 1000L * 60L;
+//    private static final long PERIODIC_INTERVAL = 1000L * 60L;
 
     /* Hardcode Public Key, When certificate is build Change public key with certificate public key */
-    private static final String PUBLIC_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCk4vW6YW0U6dasZFS2VqQGVlUmqxiVxwL7yTwTqRZdoKPYHUbTwt+IfkTdnS3w+UjtVB2H1xW9ACmz0kSxbYDjyhZZ7ZMlFg6dOom8LE7Lw4a2grVlI2Qd+D91n+HWJ0/5OIPCs67CrkmoQU/deSv39Kqcp46m3qs9eD4389zNiQIDAQAB";
+//    private static final String PUBLIC_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCk4vW6YW0U6dasZFS2VqQGVlUmqxiVxwL7yTwTqRZdoKPYHUbTwt+IfkTdnS3w+UjtVB2H1xW9ACmz0kSxbYDjyhZZ7ZMlFg6dOom8LE7Lw4a2grVlI2Qd+D91n+HWJ0/5OIPCs67CrkmoQU/deSv39Kqcp46m3qs9eD4389zNiQIDAQAB";
 
-    /* TApp Context */
-    private static final TAppTime context = new TAppTime();
 
     /**
      * check if certificate is provided, and it is a valid certificate, able to get TCert date
@@ -71,7 +70,22 @@ public class SecurityContext implements Cloneable, Serializable {
      * @return
      */
     public static boolean isCertificateValid(){
-        return context.isCertificateValid();
+
+        if(securityContext == null) {
+            throw new AssertionError("You have to call init first");
+        }
+        return securityContext.context.isCertificateValid();
+    }
+
+    public synchronized static void init(SecurityContextBuilder contextBuilder) {
+        if (securityContext != null)
+        {
+            // in my opinion this is optional, but for the purists it ensures
+            // that you only ever get the same instance when you call getInstance
+            throw new AssertionError("You already initialized Security Context");
+        }
+
+        securityContext = new SecurityContext(contextBuilder);
     }
 
     /**
@@ -82,14 +96,29 @@ public class SecurityContext implements Cloneable, Serializable {
 
         private boolean isValid;
         private final LocalDateTime tCertExpire;
+        private final int seed_exponential_factor;
+        private final int max_retry_attempt;
+        private final String ns_server;
+        private final long periodicInterval;
+        private final String publicKey;
+        private final CertificateFormat certificateFormat;
 
         /**
          * Read Certificate, get time from NTP Server.
          * Set isValid to true, if TCert < TAppTime
          * Schedule Job/Thread for Syncing TAppTime
          */
-        TAppTime(){
-            String certificatePath = System.getProperty(DEFAULT_CERT_SYS_FUNC_NAME, "NONE");
+        TAppTime(String ns_server, String cert_sys_func_name, long periodicInterval, int seed_exponential_factor, int max_retry_attempt, String publicKey, CertificateFormat certificateFormat){
+
+            // String ns_server, int seed_exponential_factor, int max_retry_attempt
+            this.ns_server = ns_server;
+            this.seed_exponential_factor = seed_exponential_factor;
+            this.max_retry_attempt = max_retry_attempt;
+            this.periodicInterval = periodicInterval;
+            this.publicKey = publicKey;
+            this.certificateFormat = certificateFormat;
+
+            String certificatePath = System.getProperty(cert_sys_func_name, "NONE");
             if("NONE".equals(certificatePath)){
                 throw new RuntimeException("Certificate not found");
             }
@@ -126,7 +155,7 @@ public class SecurityContext implements Cloneable, Serializable {
             long delay = 1000L;
             // long period = 1000L * 60L * 60L; // Hourly
 //            long period = 1000L * 60L;         // Every Minute
-            timer.scheduleAtFixedRate(repeatedTask, delay, PERIODIC_INTERVAL);
+            timer.scheduleAtFixedRate(repeatedTask, delay, this.periodicInterval);
         }
 
         private boolean isCertificateValid(){
@@ -150,14 +179,14 @@ public class SecurityContext implements Cloneable, Serializable {
 
             PublicKey publicKey = null;
             try {
-                publicKey = CertificateBuilder.getPublicKeyFromText(PUBLIC_KEY);
+                publicKey = CertificateUtil.getPublicKeyFromText(this.publicKey);
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
             } catch (InvalidKeySpecException e) {
                 e.printStackTrace();
             }
 
-            String fieldValue = CertificateBuilder.getDataField(new String(certificateContent),
+            String fieldValue = CertificateUtil.getDataField(new String(certificateContent),
                                                                 publicKey,
                                                                 CIPHER_DELIMITER,
                                                                 CIPHER_SECURE_FIELD - 1
@@ -173,9 +202,9 @@ public class SecurityContext implements Cloneable, Serializable {
         private LocalDateTime getTimeFromNTPOrFail(){
 
             int retryCount = 1;
-            int factor = SEED_EXPONENTIAL_FACTOR; // exponential increase next attempt time
+            int factor = this.seed_exponential_factor; // exponential increase next attempt time
 
-            while(retryCount <= MAX_RETRY_ATTEMP){
+            while(retryCount <= this.max_retry_attempt){
 //                System.out.println("retryCount "+retryCount+" "+Instant.now());
                 LocalDateTime ntptime = getTimeFromNTP();
 
@@ -184,7 +213,7 @@ public class SecurityContext implements Cloneable, Serializable {
                 }
 
                 try {
-                    if(retryCount == MAX_RETRY_ATTEMP)
+                    if(retryCount == this.max_retry_attempt)
                         break;
                     Thread.sleep(1000L * (retryCount+factor));
                 } catch (InterruptedException e) {
@@ -212,8 +241,8 @@ public class SecurityContext implements Cloneable, Serializable {
          * @return
          */
         private LocalDateTime getTimeFromNTP(){
-            String nsServer = System.getProperty(DEFAULT_NTP_FUNC_NAME, DEFAULT_NS_SERVER);
-            System.out.println(nsServer);
+//            String nsServer = System.getProperty(DEFAULT_NTP_FUNC_NAME, DEFAULT_NS_SERVER);
+            String nsServer = this.ns_server;
             NTPUDPClient timeClient = new NTPUDPClient();
             InetAddress inetAddress = null;
             try {

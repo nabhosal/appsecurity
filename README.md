@@ -10,13 +10,13 @@ The problem can be divided into two parts,
 
 We build certificate and shared it separately to our client, the certificate is a cipher containing TCert time. We used asymmetric encryption (RSA) technique to build certificate, a cipher is created using PrivateKey and PublicKey is hardcoded in SecurityContext class for decrypting the certificate/cipher. It’s similar to a signature verification technique without exposing certificate content.
 
-If jar depends on system time then by just tempering system time, a jar can be easily compromised. We completely avoid using system time, it relies on the Network Time Protocol (NTP) server to give the correct time. It periodically refresh (Tapp time) from NTP servers.
+If jar depends on system time then by just tempering system time, a jar can be easily compromised. We completely avoid using system time, it relies on the Network Time Protocol (NTP) server to give the correct time. It periodically refreshes (Tapp time) from NTP servers.
 
 ##### How to create a new Certificate
 ```java
 String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||2019-06-05T12:59:27.298||2019-06-04T18:30:27.298";
-CertificateBuilder certificateBuilder = CertificateBuilder.getInstance();
-Triplet<String, String, String> certificate = certificateBuilder.buildCertificateForData(rawdata);
+CertificateBuilder certificateUtil = CertificateBuilder.getInstance();
+Triplet<String, String, String> certificate = certificateUtil.buildCertificateForData(rawdata);
 
 System.out.println("Public Key: "+certificate.$1());
 System.out.println("Private Key: "+certificate.$2());

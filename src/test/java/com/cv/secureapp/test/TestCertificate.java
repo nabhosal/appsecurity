@@ -1,17 +1,13 @@
 package com.cv.secureapp.test;
 
-import com.cv.secureapp.core.CertificateBuilder;
+import com.cv.secureapp.core.CertificateUtil;
 import com.cv.secureapp.core.Triplet;
 import org.junit.Test;
 
-import java.io.File;
-import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.time.LocalDateTime;
 
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
 
 
 public class TestCertificate {
@@ -19,8 +15,8 @@ public class TestCertificate {
     @Test
     public void test_build_certificate(){
         String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||2019-06-05T12:59:27.298||2019-06-04T18:30:27.298";
-        CertificateBuilder certificateBuilder = CertificateBuilder.getInstance();
-        Triplet<String, String, String> certificate = certificateBuilder.buildCertificateForData(rawdata);
+        CertificateUtil certificateUtil = CertificateUtil.getInstance();
+        Triplet<String, String, String> certificate = certificateUtil.buildCertificateForData(rawdata);
 
         System.out.println("Public Key: "+certificate.$1());
         System.out.println("Private Key: "+certificate.$2());
@@ -28,7 +24,7 @@ public class TestCertificate {
 
         String TcertDate = null;
         try {
-            TcertDate = CertificateBuilder.getDataField(certificate.$3(), CertificateBuilder.getPublicKeyFromText(certificate.$1()), "\\|\\|", 3);
+            TcertDate = CertificateUtil.getDataField(certificate.$3(), CertificateUtil.getPublicKeyFromText(certificate.$1()), "\\|\\|", 3);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (InvalidKeySpecException e) {

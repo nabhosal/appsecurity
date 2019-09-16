@@ -1,6 +1,6 @@
 package com.cv.secureapp.test;
 
-import com.cv.secureapp.core.CertificateBuilder;
+import com.cv.secureapp.core.CertificateUtil;
 import com.cv.secureapp.core.SecurityContext;
 import org.junit.Test;
 
@@ -22,9 +22,10 @@ public class TestSecurityContext {
 
         String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusMinutes(3)+"||2019-06-05T12:59:27.298";
         try {
-            String certificateContent = CertificateBuilder.encrypt(rawdata, PRIVATE_KEY);
+            String certificateContent = CertificateUtil.encrypt(rawdata, PRIVATE_KEY);
             String certificatePath = createTempCertificate(certificateContent);
             System.setProperty("cv.secureapp.certificate", certificatePath);
+
             assertTrue("Failed to initialize", SecurityContext.isCertificateValid());
 
         } catch (Exception e) {
@@ -37,10 +38,11 @@ public class TestSecurityContext {
 
         String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().minusMinutes(3)+"||2019-06-05T12:59:27.298";
         try {
-            String certificateContent = CertificateBuilder.encrypt(rawdata, PRIVATE_KEY);
+            String certificateContent = CertificateUtil.encrypt(rawdata, PRIVATE_KEY);
             String certificatePath = createTempCertificate(certificateContent);
             System.setProperty("cv.secureapp.certificate", certificatePath);
             assertFalse("It should give runtime expection Certificate Expired on ", false);
+
             SecurityContext.isCertificateValid();
 
         } catch (Exception e) {
@@ -53,10 +55,11 @@ public class TestSecurityContext {
 
         String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusMinutes(3)+"||2019-06-05T12:59:27.298";
         try {
-            String certificateContent = CertificateBuilder.encrypt(rawdata, PRIVATE_KEY);
+            String certificateContent = CertificateUtil.encrypt(rawdata, PRIVATE_KEY);
             String certificatePath = createTempCertificate(certificateContent);
             System.setProperty("cv.secureapp.certificate", certificatePath);
             Thread.sleep(2 * 60 * 1000L); // Sleep for 2 minute and the check
+
             assertTrue( SecurityContext.isCertificateValid());
 
         } catch (Exception e) {
@@ -69,10 +72,11 @@ public class TestSecurityContext {
 
         String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusMinutes(1)+"||2019-06-05T12:59:27.298";
         try {
-            String certificateContent = CertificateBuilder.encrypt(rawdata, PRIVATE_KEY);
+            String certificateContent = CertificateUtil.encrypt(rawdata, PRIVATE_KEY);
             String certificatePath = createTempCertificate(certificateContent);
             System.setProperty("cv.secureapp.certificate", certificatePath);
             Thread.sleep(2 * 60 * 1000L); // Sleep for 2 minute and the check
+
             assertTrue( SecurityContext.isCertificateValid());
             assertFalse("It should give runtime expection Certificate Expired on ", false);
 
@@ -86,10 +90,11 @@ public class TestSecurityContext {
 
         String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusMinutes(4)+"||2019-06-05T12:59:27.298";
         try {
-            String certificateContent = CertificateBuilder.encrypt(rawdata, PRIVATE_KEY);
+            String certificateContent = CertificateUtil.encrypt(rawdata, PRIVATE_KEY);
             String certificatePath = createTempCertificate(certificateContent);
             System.setProperty("cv.secureapp.certificate", certificatePath);
             Thread.sleep(2 * 60 * 1000L); // Sleep for 2 minute and the check
+
             assertTrue( SecurityContext.isCertificateValid());
             assertFalse("It should give runtime expection `Certificate Expired on` ", false);
             Thread.sleep(2 * 60 * 1000L); // Again sleep for 2 minute and the check
