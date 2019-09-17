@@ -1,6 +1,6 @@
-package com.cv.secureapp.core;
+package io.github.nabhosal.secureapp;
 
-import com.cv.secureapp.core.impl.DelimitedCertificateFormatImpl;
+import io.github.nabhosal.secureapp.impl.DelimitedCertificateFormatImpl;
 
 public class SecurityContextBuilder {
 
@@ -51,7 +51,13 @@ public class SecurityContextBuilder {
 
     private CertificateFormat certificateFormat;
 
-    private SecurityContextBuilder(String nsServer, String certSysFuncName, long periodicInterval, int seedExponentialFactor, int maxRetryAttempt, String publicKey, CertificateFormat certificateFormat){
+    private SecurityContextBuilder(String nsServer,
+                                   String certSysFuncName,
+                                   long periodicInterval,
+                                   int seedExponentialFactor,
+                                   int maxRetryAttempt,
+                                   String publicKey,
+                                   CertificateFormat certificateFormat){
         this.nsServer = nsServer;
         this.certSysFuncName = certSysFuncName;
         this.periodicInterval = periodicInterval;

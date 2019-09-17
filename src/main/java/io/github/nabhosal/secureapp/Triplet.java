@@ -1,4 +1,4 @@
-package com.cv.secureapp.core;
+package io.github.nabhosal.secureapp;
 
 /**
  * Helper class to work with triplet heterogeneous objects.

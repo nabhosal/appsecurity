@@ -1,4 +1,4 @@
-package com.cv.secureapp.core;
+package io.github.nabhosal.secureapp;
 
 import org.apache.commons.net.ntp.NTPUDPClient;
 import org.apache.commons.net.ntp.TimeInfo;
@@ -130,7 +130,6 @@ public class SecurityContext implements Cloneable, Serializable {
                 throw new RuntimeException("Not able to get time from NTP server");
             }
 
-            System.out.println("tCertExpire "+tCertExpire+ " ntpTime "+ntpTime);
             if(IsCertificateTimeValid(tCertExpire, ntpTime)){
                 this.isValid = true;
             }else{
@@ -186,12 +185,9 @@ public class SecurityContext implements Cloneable, Serializable {
                 e.printStackTrace();
             }
 
-            String fieldValue = CertificateUtil.getDataField(new String(certificateContent),
-                                                                publicKey,
-                                                                CIPHER_DELIMITER,
-                                                                CIPHER_SECURE_FIELD - 1
-                                                                );
-            return LocalDateTime.parse(fieldValue);
+            String decipherCertificate =  CertificateUtil.getCertificateContent(new String(certificateContent), publicKey);
+
+            return this.certificateFormat.fromData(decipherCertificate).getExpiryDate();
         }
 
         /**

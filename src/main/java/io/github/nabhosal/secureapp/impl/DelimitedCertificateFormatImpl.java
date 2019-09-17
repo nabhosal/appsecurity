@@ -1,6 +1,6 @@
-package com.cv.secureapp.core.impl;
+package io.github.nabhosal.secureapp.impl;
 
-import com.cv.secureapp.core.CertificateFormat;
+import io.github.nabhosal.secureapp.CertificateFormat;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -18,18 +18,9 @@ public class DelimitedCertificateFormatImpl implements CertificateFormat {
         options.put("secure-field", 3);
     }
 
-    private DelimitedCertificateFormatImpl(String certificateContent){
-        this();
-        certificateContent = certificateContent;
-    }
-    @Override
-    public String encode() {
-        return certificateContent;
-    }
-
-    public static CertificateFormat from(String certificateContent){
-        return new DelimitedCertificateFormatImpl(certificateContent);
-    }
+//    public static CertificateFormat from(String certificateContent){
+//        return new DelimitedCertificateFormatImpl(certificateContent);
+//    }
 
     /**
      *  Extract specific data from encrypted certificate using delimiter and fieldindex for handling certificate
@@ -44,23 +35,32 @@ public class DelimitedCertificateFormatImpl implements CertificateFormat {
 
     @Override
     public Object getFieldData(String field) {
-        return getDataField(certificateContent, String.valueOf(getOption("delimiter")), Integer.valueOf(field));
+        validateCertificate();
+        return getDataField(certificateContent, String.valueOf(options.get("delimiter")), Integer.valueOf(field));
     }
 
     @Override
     public LocalDateTime getExpiryDate() {
-        return LocalDateTime.parse(String.valueOf(getFieldData(String.valueOf(getOption("secure-field")))));
+        validateCertificate();
+        return LocalDateTime.parse(String.valueOf(getFieldData(String.valueOf(options.get("secure-field")))));
     }
 
     @Override
-    public CertificateFormat setOption(String name, Object value) {
-        options.put(name, value);
+    public CertificateFormat set(String name, Object value) {
+        options.put(name,value);
         return this;
     }
 
     @Override
-    public Object getOption(String name) {
-        return options.get(name);
+    public CertificateFormat fromData(Object certificateContent) {
+        this.certificateContent = String.valueOf(certificateContent);
+        return this;
+    }
+
+    private void validateCertificate(){
+
+        if ("".equalsIgnoreCase(this.certificateContent) || certificateContent == null)
+            throw new AssertionError("Certificate is absent, kindly use `fromData` method to push certificate");
     }
 
     private static String getDataField(String certificate, String delimiter, int fieldIndex){

@@ -1,4 +1,4 @@
-package com.cv.secureapp.core;
+package io.github.nabhosal.secureapp;
 
 import javax.crypto.Cipher;
 import java.io.File;
@@ -36,7 +36,7 @@ public class CertificateUtil {
 
     public CertificateUtil() throws NoSuchAlgorithmException {
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
-        keyGen.initialize(1024);
+        keyGen.initialize(2048);
         KeyPair pair = keyGen.generateKeyPair();
         this.privateKey = pair.getPrivate();
         this.publicKey = pair.getPublic();
@@ -150,16 +150,18 @@ public class CertificateUtil {
         return fieldValue;
     }
 
+    public static String getCertificateContent(String certificate, PublicKey publicKey){
+        return getCertificateContent(Base64.getDecoder().decode(certificate), publicKey);
+    }
+
     /**
      *  Return decrypted certificate content
      *
      * @param certificate encrypted certificate content
      * @param publicKey key to decrypt the certificate
-     * @param delimiter internal to certificate content shuffling
-     * @param fieldIndex internal to certificate content shuffling
      * @return
      */
-    public static String getCertificateContent(byte []certificate, PublicKey publicKey, String delimiter, int fieldIndex){
+    public static String getCertificateContent(byte []certificate, PublicKey publicKey){
         String unCipherData = "";
         try {
             unCipherData = decrypt(certificate, publicKey);

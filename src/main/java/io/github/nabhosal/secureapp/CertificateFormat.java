@@ -1,13 +1,12 @@
-package com.cv.secureapp.core;
+package io.github.nabhosal.secureapp;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public interface CertificateFormat extends Serializable, Cloneable {
 
-    public String encode();
     public Object getFieldData(String field);
     public LocalDateTime getExpiryDate();
-    public CertificateFormat setOption(String name, Object value);
-    public Object getOption(String name);
+    public CertificateFormat set(String name, Object value);
+    public CertificateFormat fromData(Object certificateContent);
 }
