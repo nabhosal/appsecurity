@@ -1,8 +1,8 @@
 package io.github.nabhosal.secureapp.test;
 
 import io.github.nabhosal.secureapp.CertificateFormat;
-import io.github.nabhosal.secureapp.CertificateUtil;
-import io.github.nabhosal.secureapp.Triplet;
+import io.github.nabhosal.secureapp.utils.CertificateUtil;
+import io.github.nabhosal.secureapp.utils.Triplet;
 import io.github.nabhosal.secureapp.impl.DelimitedCertificateFormatImpl;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package io.github.nabhosal.secureapp;
+package io.github.nabhosal.secureapp.utils;
 
 import javax.crypto.Cipher;
 import java.io.File;

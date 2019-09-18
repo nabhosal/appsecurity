@@ -1,5 +1,6 @@
 package io.github.nabhosal.secureapp;
 
+import io.github.nabhosal.secureapp.utils.CertificateUtil;
 import org.apache.commons.net.ntp.NTPUDPClient;
 import org.apache.commons.net.ntp.TimeInfo;
 

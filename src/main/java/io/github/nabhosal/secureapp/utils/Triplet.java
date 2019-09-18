@@ -1,4 +1,4 @@
-package io.github.nabhosal.secureapp;
+package io.github.nabhosal.secureapp.utils;
 
 /**
  * Helper class to work with triplet heterogeneous objects.
@@ -49,5 +49,4 @@ public class Triplet<T1, T2, T3> {
                 ", $3=" + $3 +
                 '}';
     }
-
 }

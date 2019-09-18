@@ -15,7 +15,7 @@ public class DelimitedCertificateFormatImpl implements CertificateFormat {
     public DelimitedCertificateFormatImpl(){
         options = new HashMap<>();
         options.put("delimiter", "\\|\\|");
-        options.put("secure-field", 3);
+        options.put("secure-field", 2);
     }
 
 //    public static CertificateFormat from(String certificateContent){
