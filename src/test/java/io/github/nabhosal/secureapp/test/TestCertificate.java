@@ -2,6 +2,7 @@ package io.github.nabhosal.secureapp.test;
 
 import io.github.nabhosal.secureapp.CertificateFormat;
 import io.github.nabhosal.secureapp.utils.CertificateUtil;
+import io.github.nabhosal.secureapp.utils.Obfuscator;
 import io.github.nabhosal.secureapp.utils.Triplet;
 import io.github.nabhosal.secureapp.impl.DelimitedCertificateFormatImpl;
 import org.junit.Test;
@@ -22,6 +23,7 @@ public class TestCertificate {
         Triplet<String, String, String> certificate = certificateUtil.buildCertificateForData(rawdata);
 
         System.out.println("Public Key: "+certificate.$1());
+        System.out.println("Obfuscated Public Key: "+ Obfuscator.getObfuscatedCode(certificate.$1()));
         System.out.println("Private Key: "+certificate.$2());
         System.out.println("Certificate: "+certificate.$3());
 

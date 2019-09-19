@@ -14,10 +14,6 @@ public class SecurityContextBuilder {
     /* default network server */
     private static final String DEFAULT_NS_SERVER = "time-a.nist.gov";
 
-    /* Conf for extracting data from Cipher / Certificate */
-    private static final String CIPHER_DELIMITER = "\\|\\|";
-    private static final int CIPHER_SECURE_FIELD = 3;
-
     /* Max retry for getting time from ns server */
     private static final int DEFAULT_MAX_RETRY_ATTEMPT = 3;
 
@@ -30,7 +26,7 @@ public class SecurityContextBuilder {
      *       Hourly       = 1000L * 60L * 60L
      *       Daily        = 1000L * 60L * 60L * 24L
      */
-    private static final long DEFAULT_PERIODIC_INTERVAL = INTERVAL.MINUTE.getTime();
+    private static final long DEFAULT_PERIODIC_INTERVAL = INTERVAL.SECOND.getTime();
 
     private static final CertificateFormat DEFAULT_CERTIFICATE_FORMAT = new DelimitedCertificateFormatImpl();
 
@@ -40,6 +36,7 @@ public class SecurityContextBuilder {
     private int maxRetryAttempt;
     private long periodicInterval;
     private String publicKey;
+    private boolean useLocalInstanceTime;
 
     public CertificateFormat getCertificateFormat() {
         return certificateFormat;
@@ -58,7 +55,8 @@ public class SecurityContextBuilder {
                                    int seedExponentialFactor,
                                    int maxRetryAttempt,
                                    String publicKey,
-                                   CertificateFormat certificateFormat){
+                                   CertificateFormat certificateFormat,
+                                   boolean useLocalInstanceTime){
         this.nsServer = nsServer;
         this.certSysFuncName = certSysFuncName;
         this.periodicInterval = periodicInterval;
@@ -66,13 +64,7 @@ public class SecurityContextBuilder {
         this.maxRetryAttempt = maxRetryAttempt;
         this.publicKey = publicKey;
         this.certificateFormat = certificateFormat;
-
-//        this.ns_server = "".equalsIgnoreCase(ns_server) || ns_server == null ? DEFAULT_NS_SERVER : ns_server;
-//        this.seed_exponential_factor = seed_exponential_factor > 0  ? DEFAULT_SEED_EXPONENTIAL_FACTOR : seed_exponential_factor;
-//        this.max_retry_attempt = max_retry_attempt > 0  ? DEFAULT_MAX_RETRY_ATTEMPT : max_retry_attempt;
-//        this.cert_sys_func_name = "".equalsIgnoreCase(cert_sys_func_name) || cert_sys_func_name == null ?  DEFAULT_CERT_SYS_FUNC_NAME : cert_sys_func_name;
-
-
+        this.useLocalInstanceTime = useLocalInstanceTime;
     }
 
     public static SecurityContextBuilder withDefault(){
@@ -83,7 +75,8 @@ public class SecurityContextBuilder {
                 DEFAULT_SEED_EXPONENTIAL_FACTOR,
                 DEFAULT_MAX_RETRY_ATTEMPT,
                 "",
-                DEFAULT_CERTIFICATE_FORMAT);
+                DEFAULT_CERTIFICATE_FORMAT,
+                false);
     }
 
     public void initialize(){
@@ -122,6 +115,11 @@ public class SecurityContextBuilder {
         return this;
     }
 
+    public SecurityContextBuilder useInstanceTime(){
+        this.useLocalInstanceTime = true;
+        return this;
+    }
+
     public String getNsServer() {
         return nsServer;
     }
@@ -146,9 +144,13 @@ public class SecurityContextBuilder {
         return publicKey;
     }
 
+    public boolean isUseLocalInstanceTime() {
+        return useLocalInstanceTime;
+    }
+
     public enum INTERVAL
     {
-        MINUTE(1000L * 60L), HOURLY(1000L * 60L * 60L), DAILY(1000L * 60L * 60L * 24L);
+        SECOND(1000L), MINUTE(SECOND.getTime() * 60L), HOURLY(MINUTE.getTime() * 60L), DAILY(HOURLY.getTime() * 24L);
 
         // declaring private variable for getting values
         private long time;

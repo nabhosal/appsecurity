@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b39e6fd-249f-4a87-a600-cb195a1abc0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/CertificateExpiredException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/CertificateNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/SecurityContextException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContextBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContextBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/impl/DelimitedCertificateFormatImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/impl/DelimitedCertificateFormatImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/impl/JsonCertificateFormatImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/impl/JsonCertificateFormatImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/utils/CertificateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/utils/CertificateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestCertificate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestCertificate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContextBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContextBuilder.java" afterDir="false" />
     </list>
@@ -35,21 +33,23 @@
         <counts>
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
           <entry key="gitignore" value="6" />
-          <entry key="java" value="14251" />
+          <entry key="java" value="15347" />
           <entry key="md" value="502" />
           <entry key="xml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14257" />
+          <entry key="JAVA" value="15353" />
           <entry key="Markdown" value="496" />
           <entry key="PLAIN_TEXT" value="24" />
           <entry key="XML" value="15" />
@@ -60,7 +60,7 @@
           <entry key="cipher" value="5" />
           <entry key="class" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="54" />
+          <entry key="java" value="59" />
           <entry key="md" value="1" />
           <entry key="publicKey" value="1" />
           <entry key="xml" value="4" />
@@ -70,7 +70,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="54" />
+          <entry key="JAVA" value="59" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="XML" value="4" />
@@ -80,11 +80,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+            <state relative-caret-position="152">
+              <caret line="22" column="17147" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="17147" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,10 +93,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContextBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="28" column="55" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="203" column="18" selection-start-line="203" selection-start-column="18" selection-end-line="203" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="12" column="1201" selection-start-line="12" selection-start-column="1201" selection-end-line="12" selection-end-column="1201" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContextBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-647">
-              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            <state relative-caret-position="419">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,7 +141,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestCertificate.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -116,7 +149,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestCertificateFormat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="342">
               <caret line="24" column="43" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -128,8 +161,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestJsonCertificateFormat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+            <state relative-caret-position="1634">
+              <caret line="100" column="9" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -149,6 +182,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>AssertionError</find>
+      <find>System.out.p</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,7 +210,6 @@
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/Triplet.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/utils/CertificateUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/utils/Obfuscator.java" />
-        <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestJsonCertificateFormat.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/CertificateExpired.java" />
@@ -185,12 +218,13 @@
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/CertificateExpiredException.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/SecurityContextException.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/CertificateNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContextBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/impl/JsonCertificateFormatImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/impl/DelimitedCertificateFormatImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContextBuilder.java" />
         <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContextBuilder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContextBuilder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java" />
       </list>
     </option>
   </component>
@@ -213,9 +247,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1643" />
-    <option name="y" value="55" />
-    <option name="width" value="1528" />
+    <option name="x" value="1525" />
+    <option name="y" value="52" />
+    <option name="width" value="1596" />
     <option name="height" value="994" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -238,6 +272,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -328,11 +363,10 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568826833305" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568876364095" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -355,7 +389,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestSecurityContext.certificate_validity_on_larger_timeframe">
+  <component name="RunManager" selected="JUnit.TestSecurityContextBuilder.testUsingInstanceTime">
+    <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appsecurity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.nabhosal.secureapp.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.github.nabhosal.secureapp.test" />
+      <option name="MAIN_CLASS_NAME" value="io.github.nabhosal.secureapp.test.TestSecurityContextBuilder" />
+      <option name="METHOD_NAME" value="testUsingInstanceTime" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestSecurityContext.certificate_validity_on_larger_timeframe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="appsecurity" />
       <extension name="coverage">
@@ -420,36 +470,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSecurityContext.check_initialization" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="appsecurity" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.nabhosal.secureapp.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.github.nabhosal.secureapp.test" />
-      <option name="MAIN_CLASS_NAME" value="io.github.nabhosal.secureapp.test.TestSecurityContext" />
-      <option name="METHOD_NAME" value="check_initialization" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.TestSecurityContext.check_initialization" />
       <item itemvalue="JUnit.TestSecurityContext.check_expire_certificate" />
       <item itemvalue="JUnit.TestSecurityContext.certificate_validity_within_timeframe" />
       <item itemvalue="JUnit.TestSecurityContext.certificate_validity_outside_timeframe" />
       <item itemvalue="JUnit.TestSecurityContext.certificate_validity_on_larger_timeframe" />
+      <item itemvalue="JUnit.TestSecurityContextBuilder.testUsingInstanceTime" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSecurityContext.certificate_validity_on_larger_timeframe" />
+        <item itemvalue="JUnit.TestSecurityContextBuilder.testUsingInstanceTime" />
         <item itemvalue="JUnit.TestSecurityContext.certificate_validity_outside_timeframe" />
-        <item itemvalue="JUnit.TestSecurityContext.certificate_validity_within_timeframe" />
         <item itemvalue="JUnit.TestSecurityContext.check_expire_certificate" />
-        <item itemvalue="JUnit.TestSecurityContext.check_initialization" />
+        <item itemvalue="JUnit.TestSecurityContext.certificate_validity_on_larger_timeframe" />
+        <item itemvalue="JUnit.TestSecurityContext.certificate_validity_within_timeframe" />
       </list>
     </recent_temporary>
   </component>
@@ -467,42 +501,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSecurityContext_check_expire_certificate - 2019.09.18 at 12h 59m 34s.xml">
-      <configuration name="TestSecurityContext.check_expire_certificate" configurationId="JUnit" />
+    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 22m 07s.xml">
+      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_check_expire_certificate - 2019.09.18 at 19h 45m 12s.xml">
-      <configuration name="TestSecurityContext.check_expire_certificate" configurationId="JUnit" />
+    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 22m 28s.xml">
+      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_check_expire_certificate - 2019.09.18 at 19h 45m 41s.xml">
-      <configuration name="TestSecurityContext.check_expire_certificate" configurationId="JUnit" />
+    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 23m 22s.xml">
+      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_check_expire_certificate - 2019.09.18 at 19h 46m 09s.xml">
-      <configuration name="TestSecurityContext.check_expire_certificate" configurationId="JUnit" />
+    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 23m 35s.xml">
+      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_within_timeframe - 2019.09.18 at 22h 23m 09s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_within_timeframe" configurationId="JUnit" />
+    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 27m 05s.xml">
+      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_within_timeframe - 2019.09.18 at 22h 26m 55s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_within_timeframe" configurationId="JUnit" />
+    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 27m 19s.xml">
+      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_within_timeframe - 2019.09.18 at 22h 28m 36s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_within_timeframe" configurationId="JUnit" />
+    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 27m 56s.xml">
+      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_outside_timeframe - 2019.09.18 at 22h 30m 00s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_outside_timeframe" configurationId="JUnit" />
+    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 28m 23s.xml">
+      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_on_larger_timeframe - 2019.09.18 at 22h 33m 52s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_on_larger_timeframe" configurationId="JUnit" />
+    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 28m 42s.xml">
+      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSecurityContext_certificate_validity_on_larger_timeframe - 2019.09.18 at 22h 37m 02s.xml">
-      <configuration name="TestSecurityContext.certificate_validity_on_larger_timeframe" configurationId="JUnit" />
+    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 29m 16s.xml">
+      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="-4" width="1311" height="772" extended-state="6" />
+    <frame x="1525" y="52" width="1596" height="994" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27684963" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32360572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -511,7 +545,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43589744" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.543943" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -537,13 +571,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/RSAUtil.java" />
     <entry file="file://$PROJECT_DIR$/RSA/publicKey" />
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Timer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="192" column="55" selection-start-line="192" selection-start-column="54" selection-end-line="192" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/CERT02.cipher">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -620,27 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/CertificateExpiredException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="65" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="65" />
-          <folding>
-            <element signature="e#154#155#0" expanded="true" />
-            <element signature="e#177#178#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/SecurityContextException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -670,28 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContextBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4840#4841#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -735,16 +719,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/CertificateExpiredException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#172#173#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1341">
+          <caret line="504" selection-start-line="504" selection-end-line="504" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="22" column="17147" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="17147" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContextBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="28" column="55" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestCertificate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestCertificateFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="342">
           <caret line="24" column="43" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -754,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestJsonCertificateFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+        <state relative-caret-position="1634">
+          <caret line="100" column="9" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -764,21 +786,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContextBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-647">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state relative-caret-position="419">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContext.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+        <state relative-caret-position="186">
+          <caret line="203" column="18" selection-start-line="203" selection-start-column="18" selection-end-line="203" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="12" column="1201" selection-start-line="12" selection-start-column="1201" selection-end-line="12" selection-end-column="1201" />
         </state>
       </provider>
     </entry>

@@ -1,7 +1,6 @@
 package io.github.nabhosal.secureapp.test;
 
 import io.github.nabhosal.secureapp.exception.CertificateExpiredException;
-import io.github.nabhosal.secureapp.exception.SecurityContextException;
 import io.github.nabhosal.secureapp.utils.CertificateUtil;
 import io.github.nabhosal.secureapp.SecurityContext;
 import io.github.nabhosal.secureapp.SecurityContextBuilder;
@@ -56,7 +55,7 @@ public class TestSecurityContext {
     @Test(expected = CertificateExpiredException.class)
     public void check_expire_certificate(){
 
-        String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().minusMinutes(3)+"||2019-06-05T12:59:27.298";
+        String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusSeconds(1)+"||2019-06-05T12:59:27.298";
 
         String certificateContent = null;
         try {
@@ -68,6 +67,12 @@ public class TestSecurityContext {
         System.setProperty("cv.secureapp.certificate", certificatePath);
         assertFalse("It should give runtime expection Certificate Expired on ", false);
         SecurityContextBuilder.withDefault().withPublicKey(OBFUSCATED_PUBLIC_KEY).initialize();
+        assertTrue("Certificate should be valid within first 2 sec", SecurityContext.isCertificateValid());
+        try {
+            Thread.sleep(2 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         /* It must throw java.lang.RuntimeException: Certificate Expired on  */
         SecurityContext.isCertificateValid();
@@ -115,7 +120,7 @@ public class TestSecurityContext {
         SecurityContextBuilder.withDefault().withPublicKey(OBFUSCATED_PUBLIC_KEY).initialize();
 
         /* It must throw java.lang.RuntimeException: Certificate Expired on  */
-        SecurityContext.isCertificateValid();
+        assertFalse("Certificate should be invalid", SecurityContext.isCertificateValid());
 
     }
 

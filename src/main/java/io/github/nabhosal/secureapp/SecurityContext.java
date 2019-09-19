@@ -49,7 +49,8 @@ public class SecurityContext implements Cloneable, Serializable {
                 contextBuilder.getSeedExponentialFactor(),
                 contextBuilder.getMaxRetryAttempt(),
                 contextBuilder.getPublicKey(),
-                contextBuilder.getCertificateFormat());
+                contextBuilder.getCertificateFormat(),
+                contextBuilder.isUseLocalInstanceTime());
     }
 
     /**
@@ -60,7 +61,7 @@ public class SecurityContext implements Cloneable, Serializable {
     public static boolean isCertificateValid(){
 
         if(securityContext == null) {
-            throw new SecurityContextException("You have to call SecurityContextBuilder.initialize first");
+            throw new SecurityContextException("You have to call SecurityContextBuilder.initialize first or Certificate is already expired");
         }
         return securityContext.context.isCertificateValid();
     }
@@ -90,13 +91,21 @@ public class SecurityContext implements Cloneable, Serializable {
         private final long periodicInterval;
         private final String publicKey;
         private final CertificateFormat certificateFormat;
+        private final boolean useLocalInstanceTime;
 
         /**
          * Read Certificate, get time from NTP Server.
          * Set isValid to true, if TCert < TAppTime
          * Schedule Job/Thread for Syncing TAppTime
          */
-        TAppTime(String ns_server, String cert_sys_func_name, long periodicInterval, int seed_exponential_factor, int max_retry_attempt, String publicKey, CertificateFormat certificateFormat){
+        TAppTime(String ns_server,
+                 String cert_sys_func_name,
+                 long periodicInterval,
+                 int seed_exponential_factor,
+                 int max_retry_attempt,
+                 String publicKey,
+                 CertificateFormat certificateFormat,
+                 boolean useLocalInstanceTime){
 
             // String ns_server, int seed_exponential_factor, int max_retry_attempt
             this.ns_server = ns_server;
@@ -105,6 +114,7 @@ public class SecurityContext implements Cloneable, Serializable {
             this.periodicInterval = periodicInterval;
             this.publicKey = publicKey;
             this.certificateFormat = certificateFormat;
+            this.useLocalInstanceTime = useLocalInstanceTime;
 
             String certificatePath = System.getProperty(cert_sys_func_name, "NONE");
             if("NONE".equals(certificatePath)){
@@ -113,31 +123,33 @@ public class SecurityContext implements Cloneable, Serializable {
 
             this.tCertExpire = readCertificate(certificatePath);
 
-            LocalDateTime ntpTime = getTimeFromNTPOrFail();
+            LocalDateTime ntpTime = useLocalInstanceTime ? LocalDateTime.now() : getTimeFromNTPOrFail();
             if(ntpTime == null){
                 throw new SecurityContextException("Not able to get time from NTP server");
             }
 
-            if(IsCertificateTimeValid(tCertExpire, ntpTime)){
+            if(IsCertificateTimeValid(ntpTime)){
                 this.isValid = true;
             }else{
                 throw new CertificateExpiredException("Certificate expired on "+tCertExpire);
             }
 
-            scheduleNTPTimerSynJob();
+            scheduleTimerSynJob();
         }
 
-        private boolean IsCertificateTimeValid(LocalDateTime TCertTime, LocalDateTime NTPTime){
-            return TCertTime.isAfter(NTPTime) ? true : false;
+        private boolean IsCertificateTimeValid(LocalDateTime NTPTime){
+            if(tCertExpire == null)
+                return false;
+            return tCertExpire.isAfter(NTPTime) ? true : false;
         }
 
         /**
          *  Schedule TAppTime Refresh by using NTPTimerSynJob Class based on TimerTask Implementation
          *  Configurable for refresh duration using period variable
          */
-        private void scheduleNTPTimerSynJob() {
-            TimerTask repeatedTask = new NTPTimerSynJob(this);
-            Timer timer = new Timer("scheduleNTPTimerSynJob");
+        private void scheduleTimerSynJob() {
+            TimerTask repeatedTask = useLocalInstanceTime ? new InstanceTimeSynJob(this) : new NTPTimerSynJob(this);
+            Timer timer = new Timer("scheduleTimerSynJob");
 
             long delay = 1000L;
             // long period = 1000L * 60L * 60L; // Hourly
@@ -260,9 +272,36 @@ public class SecurityContext implements Cloneable, Serializable {
                 tAppTime.isValid = false;
                 throw new SecurityContextException("Not able to get time from NTP server");
             }
-            tAppTime.isValid = true;
+            if(!tAppTime.IsCertificateTimeValid(ntpTime)){
+                tAppTime.isValid = false;
+                throw new CertificateExpiredException("Certificate validity "+tAppTime.tCertExpire+" is expired on "+ntpTime);
+            }
         }
     }
+
+    /**
+     *  InstanceTimeSynJob class is used to create task for updating TAppTime, a executor is schedule
+     *  to run task periodically using instance/machine time
+     */
+    static class InstanceTimeSynJob extends TimerTask{
+
+        private final TAppTime tAppTime;
+
+        public InstanceTimeSynJob(TAppTime tAppTime){
+            this.tAppTime = tAppTime;
+        }
+
+        @Override
+        public void run() {
+
+            LocalDateTime ntpTime = LocalDateTime.now();
+            if(!tAppTime.IsCertificateTimeValid(ntpTime)){
+                tAppTime.isValid = false;
+                throw new CertificateExpiredException("Certificate validity "+tAppTime.tCertExpire+" is expired on "+ntpTime);
+            }
+        }
+    }
+
     // Enabling SecurityContext, a singleton class safe reflection based attack
     // implement readResolve method
     protected Object readResolve()

@@ -1,5 +1,7 @@
 package io.github.nabhosal.secureapp.utils;
 
+import io.github.nabhosal.secureapp.exception.CertificateNotFoundException;
+
 import javax.crypto.Cipher;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -178,9 +180,7 @@ public class CertificateUtil {
         try {
             certificateUtil = new CertificateUtil();
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            System.out.println("CertificateUtil: No Such Algo found");
-            throw new RuntimeException("CertificateUtil: No Such Algo found");
+            throw new CertificateNotFoundException("CertificateUtil: No Such Algo found", e);
         }
         return certificateUtil;
     }
@@ -212,7 +212,7 @@ public class CertificateUtil {
 
         return certificate;
     }
-
+    /*
     public static void main(String[] args) throws NoSuchAlgorithmException, IOException {
 
         String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||2019-06-05T12:59:27.298||2019-06-04T18:30:27.298";
@@ -235,4 +235,5 @@ public class CertificateUtil {
         }
 
     }
+    */
 }
