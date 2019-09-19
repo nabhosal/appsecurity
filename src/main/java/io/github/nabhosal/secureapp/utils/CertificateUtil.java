@@ -122,6 +122,7 @@ public class CertificateUtil {
         return decrypt(Base64.getDecoder().decode(cipherText), publicKey);
     }
 
+    @Deprecated
     public static String getDataField(String certificate, PublicKey publicKey, String delimiter, int fieldIndex){
         return getDataField(Base64.getDecoder().decode(certificate), publicKey, delimiter, fieldIndex);
     }
@@ -139,6 +140,7 @@ public class CertificateUtil {
      * @param fieldIndex internal to certificate content shuffling
      * @return
      */
+    @Deprecated
     public static String getDataField(byte []certificate, PublicKey publicKey, String delimiter, int fieldIndex){
         String unCipherData = "";
         try {

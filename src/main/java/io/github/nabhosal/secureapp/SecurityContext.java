@@ -6,6 +6,8 @@ import io.github.nabhosal.secureapp.exception.SecurityContextException;
 import io.github.nabhosal.secureapp.utils.CertificateUtil;
 import org.apache.commons.net.ntp.NTPUDPClient;
 import org.apache.commons.net.ntp.TimeInfo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -35,6 +37,7 @@ import java.util.TimerTask;
  */
 public class SecurityContext implements Cloneable, Serializable {
 
+    private static Logger logger = LogManager.getLogger(SecurityContext.class);
 
     private static SecurityContext securityContext;
 
@@ -61,6 +64,7 @@ public class SecurityContext implements Cloneable, Serializable {
     public static boolean isCertificateValid(){
 
         if(securityContext == null) {
+            logger.error("SecurityContext->isCertificateValid: SecurityContext is null");
             throw new SecurityContextException("You have to call SecurityContextBuilder.initialize first or Certificate is already expired");
         }
         return securityContext.context.isCertificateValid();
@@ -71,6 +75,7 @@ public class SecurityContext implements Cloneable, Serializable {
         {
             // in my opinion this is optional, but for the purists it ensures
             // that you only ever get the same instance when you call getInstance
+            logger.error("SecurityContext->isCertificateValid: SecurityContext is null");
             throw new SecurityContextException("You already initialized Security Context");
         }
 
