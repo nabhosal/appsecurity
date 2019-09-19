@@ -1,5 +1,6 @@
 package io.github.nabhosal.secureapp.test;
 
+import io.github.nabhosal.secureapp.exception.CertificateExpiredException;
 import io.github.nabhosal.secureapp.utils.CertificateUtil;
 import io.github.nabhosal.secureapp.SecurityContext;
 import io.github.nabhosal.secureapp.SecurityContextBuilder;
@@ -25,12 +26,12 @@ public class TestSecurityContextBuilder {
             String certificatePath = createTempCertificate(certificateContent);
             System.setProperty("cv.secureapp.certificate", certificatePath);
             assertFalse("It should give runtime expection Certificate Expired on ", false);
-            SecurityContextBuilder.withDefault().initialize();
-            SecurityContext.isCertificateValid();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        SecurityContextBuilder.withDefault().initialize();
+        SecurityContext.isCertificateValid();
     }
 
     @Test
@@ -53,7 +54,7 @@ public class TestSecurityContextBuilder {
         }
     }
 
-    @Test(expected = AssertionError.class)
+    @Test(expected = CertificateExpiredException.class)
     public void check_multi_securityContext(){
 
         String expiredCertificate = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusSeconds(10)+"||2019-06-05T12:59:27.298";

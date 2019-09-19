@@ -1,5 +1,6 @@
 package io.github.nabhosal.secureapp;
 
+import io.github.nabhosal.secureapp.exception.SecurityContextException;
 import io.github.nabhosal.secureapp.impl.DelimitedCertificateFormatImpl;
 
 public class SecurityContextBuilder {
@@ -87,7 +88,7 @@ public class SecurityContextBuilder {
 
     public void initialize(){
         if ("".equalsIgnoreCase(publicKey) || publicKey == null)
-            throw new AssertionError("public key is not defined");
+            throw new SecurityContextException("public key is not defined");
         SecurityContext.init(this);
     }
 

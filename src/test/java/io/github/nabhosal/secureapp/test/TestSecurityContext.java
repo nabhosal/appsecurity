@@ -1,5 +1,7 @@
 package io.github.nabhosal.secureapp.test;
 
+import io.github.nabhosal.secureapp.exception.CertificateExpiredException;
+import io.github.nabhosal.secureapp.exception.SecurityContextException;
 import io.github.nabhosal.secureapp.utils.CertificateUtil;
 import io.github.nabhosal.secureapp.SecurityContext;
 import io.github.nabhosal.secureapp.SecurityContextBuilder;
@@ -51,7 +53,7 @@ public class TestSecurityContext {
         SecurityContext.isCertificateValid();
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = CertificateExpiredException.class)
     public void check_expire_certificate(){
 
         String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().minusMinutes(3)+"||2019-06-05T12:59:27.298";
@@ -71,10 +73,10 @@ public class TestSecurityContext {
         SecurityContext.isCertificateValid();
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void certificate_validity_within_timeframe(){
 
-        String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusMinutes(3)+"||2019-06-05T12:59:27.298";
+        String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusMinutes(2)+"||2019-06-05T12:59:27.298";
 
         String certificateContent = null;
         try {
@@ -85,55 +87,56 @@ public class TestSecurityContext {
         String certificatePath = createTempCertificate(certificateContent);
         System.setProperty("cv.secureapp.certificate", certificatePath);
         try {
-            Thread.sleep(2 * 60 * 1000L); // Sleep for 2 minute and the check
+            Thread.sleep(1 * 60 * 1000L); // Sleep for 1 minute and the check
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        SecurityContextBuilder.withDefault().withPublicKey(PUBLIC_KEY).initialize();
-        assertTrue("Certificate is must tbe valid", SecurityContext.isCertificateValid());
+        SecurityContextBuilder.withDefault().withPublicKey(OBFUSCATED_PUBLIC_KEY).initialize();
+        SecurityContext.isCertificateValid();
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = CertificateExpiredException.class)
     public void certificate_validity_outside_timeframe(){
 
-        String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusMinutes(1)+"||2019-06-05T12:59:27.298";
+        String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusSeconds(30)+"||2019-06-05T12:59:27.298";
 
         try {
             String certificateContent = CertificateUtil.encrypt(rawdata, PRIVATE_KEY);
             String certificatePath = createTempCertificate(certificateContent);
             System.setProperty("cv.secureapp.certificate", certificatePath);
-            Thread.sleep(2 * 60 * 1000L); // Sleep for 2 minute and the check
+            Thread.sleep(1 * 60 * 1000L); // Sleep for 1 minute and the check
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        SecurityContextBuilder.withDefault().withPublicKey(PUBLIC_KEY).initialize();
+        SecurityContextBuilder.withDefault().withPublicKey(OBFUSCATED_PUBLIC_KEY).initialize();
 
         /* It must throw java.lang.RuntimeException: Certificate Expired on  */
         SecurityContext.isCertificateValid();
 
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = CertificateExpiredException.class)
     public void certificate_validity_on_larger_timeframe(){
 
-        String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusMinutes(4)+"||2019-06-05T12:59:27.298";
+        String rawdata = "2019-06-01T18:30:27.298||2019-06-07T18:30:27.298||"+ LocalDateTime.now().plusMinutes(2)+"||2019-06-05T12:59:27.298";
         try {
             String certificateContent = CertificateUtil.encrypt(rawdata, PRIVATE_KEY);
             String certificatePath = createTempCertificate(certificateContent);
             System.setProperty("cv.secureapp.certificate", certificatePath);
-            Thread.sleep(2 * 60 * 1000L); // Sleep for 2 minute and the check
+            Thread.sleep(1 * 60 * 1000L); // Sleep for 1 minute and the check
 
-            assertTrue( SecurityContext.isCertificateValid());
-            Thread.sleep(2 * 60 * 1000L); // Again sleep for 2 minute and the check
+            SecurityContextBuilder.withDefault().withPublicKey(OBFUSCATED_PUBLIC_KEY).initialize();
+            SecurityContext.isCertificateValid();
+            Thread.sleep(1 * 60 * 1000L); // Again sleep for 2 minute and the check
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        SecurityContextBuilder.withDefault().withPublicKey(PUBLIC_KEY).initialize();
         /* It must throw java.lang.RuntimeException: Certificate Expired on  */
         SecurityContext.isCertificateValid();
     }

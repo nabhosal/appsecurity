@@ -2,6 +2,7 @@ package io.github.nabhosal.secureapp.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.nabhosal.secureapp.CertificateFormat;
+import io.github.nabhosal.secureapp.exception.CertificateNotFoundException;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -42,14 +43,14 @@ public class JsonCertificateFormatImpl implements CertificateFormat {
         try {
             mJson = objectMapper.readValue(String.valueOf(certificateContent), Map.class);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new CertificateNotFoundException("input is not a valid Json certificate", e);
         }
         return this;
     }
 
     private void validateCertificate(){
         if(mJson == null || mJson.size() == 0)
-            throw new AssertionError("Certificate is absent, kindly use `fromData` method to push certificate");
+            throw new CertificateNotFoundException("Certificate is absent, kindly use `fromData` method to push certificate");
     }
 }
 

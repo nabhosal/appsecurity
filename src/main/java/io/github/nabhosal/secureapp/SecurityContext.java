@@ -1,5 +1,8 @@
 package io.github.nabhosal.secureapp;
 
+import io.github.nabhosal.secureapp.exception.CertificateExpiredException;
+import io.github.nabhosal.secureapp.exception.CertificateNotFoundException;
+import io.github.nabhosal.secureapp.exception.SecurityContextException;
 import io.github.nabhosal.secureapp.utils.CertificateUtil;
 import org.apache.commons.net.ntp.NTPUDPClient;
 import org.apache.commons.net.ntp.TimeInfo;
@@ -35,10 +38,6 @@ public class SecurityContext implements Cloneable, Serializable {
 
     private static SecurityContext securityContext;
 
-    /* Conf for extracting data from Cipher / Certificate */
-    private static final String CIPHER_DELIMITER = "\\|\\|";
-    private static final int CIPHER_SECURE_FIELD = 3;
-
     /* TApp Context */
     private final TAppTime context;
 
@@ -54,18 +53,6 @@ public class SecurityContext implements Cloneable, Serializable {
     }
 
     /**
-     * Set Periodic interval to refresh TApp time
-     * e.g.  Every Minute = 1000L * 60L
-     *       Hourly       = 1000L * 60L * 60L
-     *       Daily        = 1000L * 60L * 60L * 24L
-     */
-//    private static final long PERIODIC_INTERVAL = 1000L * 60L;
-
-    /* Hardcode Public Key, When certificate is build Change public key with certificate public key */
-//    private static final String PUBLIC_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCk4vW6YW0U6dasZFS2VqQGVlUmqxiVxwL7yTwTqRZdoKPYHUbTwt+IfkTdnS3w+UjtVB2H1xW9ACmz0kSxbYDjyhZZ7ZMlFg6dOom8LE7Lw4a2grVlI2Qd+D91n+HWJ0/5OIPCs67CrkmoQU/deSv39Kqcp46m3qs9eD4389zNiQIDAQAB";
-
-
-    /**
      * check if certificate is provided, and it is a valid certificate, able to get TCert date
      * TCert datetime is greater then TApp datetime
      * @return
@@ -73,7 +60,7 @@ public class SecurityContext implements Cloneable, Serializable {
     public static boolean isCertificateValid(){
 
         if(securityContext == null) {
-            throw new AssertionError("You have to call init first");
+            throw new SecurityContextException("You have to call SecurityContextBuilder.initialize first");
         }
         return securityContext.context.isCertificateValid();
     }
@@ -83,7 +70,7 @@ public class SecurityContext implements Cloneable, Serializable {
         {
             // in my opinion this is optional, but for the purists it ensures
             // that you only ever get the same instance when you call getInstance
-            throw new AssertionError("You already initialized Security Context");
+            throw new SecurityContextException("You already initialized Security Context");
         }
 
         securityContext = new SecurityContext(contextBuilder);
@@ -121,20 +108,20 @@ public class SecurityContext implements Cloneable, Serializable {
 
             String certificatePath = System.getProperty(cert_sys_func_name, "NONE");
             if("NONE".equals(certificatePath)){
-                throw new RuntimeException("Certificate not found");
+                throw new CertificateNotFoundException("the certificate path variable "+cert_sys_func_name+" is empty ");
             }
 
             this.tCertExpire = readCertificate(certificatePath);
 
             LocalDateTime ntpTime = getTimeFromNTPOrFail();
             if(ntpTime == null){
-                throw new RuntimeException("Not able to get time from NTP server");
+                throw new SecurityContextException("Not able to get time from NTP server");
             }
 
             if(IsCertificateTimeValid(tCertExpire, ntpTime)){
                 this.isValid = true;
             }else{
-                throw new RuntimeException("Certificate Expired on "+tCertExpire);
+                throw new CertificateExpiredException("Certificate expired on "+tCertExpire);
             }
 
             scheduleNTPTimerSynJob();
@@ -174,16 +161,16 @@ public class SecurityContext implements Cloneable, Serializable {
             try{
                 certificateContent = Files.readAllBytes(Paths.get(absFilePath));
             }catch (IOException e){
-                throw new RuntimeException("Not able to read certificate file at "+absFilePath);
+                throw new CertificateNotFoundException("Not able to read certificate file at "+absFilePath, e);
             }
 
             PublicKey publicKey = null;
             try {
                 publicKey = CertificateUtil.getPublicKeyFromText(this.publicKey);
             } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
+                throw new SecurityContextException("Not able to build public key from text", e);
             } catch (InvalidKeySpecException e) {
-                e.printStackTrace();
+                throw new SecurityContextException("Not able to build public key from text", e);
             }
 
             String decipherCertificate =  CertificateUtil.getCertificateContent(new String(certificateContent), publicKey);
@@ -215,6 +202,7 @@ public class SecurityContext implements Cloneable, Serializable {
                     Thread.sleep(1000L * (retryCount+factor));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                    throw new SecurityContextException("demon thread to get NTP time is interrupted", e);
                 }
                 retryCount++;
                 factor += factor;
@@ -222,16 +210,6 @@ public class SecurityContext implements Cloneable, Serializable {
             return null;
         }
 
-//        Mock Implementation to test retry
-//        static int mockAttempt = 1;
-//        private LocalDateTime getTimeFromNTPMock(){
-//
-//            System.out.println("getTimeFromNTPMock mockAttempt "+mockAttempt);
-//            if(mockAttempt == 2)
-//                return LocalDateTime.now();
-//            mockAttempt++;
-//            return null;
-//        }
 
         /**
          * the getTimeFromNTP method connect to network server using NTPUDP Client to retrieve TnsTime
@@ -280,7 +258,7 @@ public class SecurityContext implements Cloneable, Serializable {
             LocalDateTime ntpTime = tAppTime.getTimeFromNTPOrFail();
             if(ntpTime == null){
                 tAppTime.isValid = false;
-                throw new RuntimeException("Not able to get time from NTP server");
+                throw new SecurityContextException("Not able to get time from NTP server");
             }
             tAppTime.isValid = true;
         }
@@ -297,6 +275,4 @@ public class SecurityContext implements Cloneable, Serializable {
         // throw new CloneNotSupportedException();
         return context;
     }
-
-
 }

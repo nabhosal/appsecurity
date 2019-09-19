@@ -1,6 +1,7 @@
 package io.github.nabhosal.secureapp.impl;
 
 import io.github.nabhosal.secureapp.CertificateFormat;
+import io.github.nabhosal.secureapp.exception.CertificateNotFoundException;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -60,7 +61,7 @@ public class DelimitedCertificateFormatImpl implements CertificateFormat {
     private void validateCertificate(){
 
         if ("".equalsIgnoreCase(this.certificateContent) || certificateContent == null)
-            throw new AssertionError("Certificate is absent, kindly use `fromData` method to push certificate");
+            throw new CertificateNotFoundException("Certificate is absent, kindly use `fromData` method to push certificate");
     }
 
     private static String getDataField(String certificate, String delimiter, int fieldIndex){
