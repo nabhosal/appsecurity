@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b39e6fd-249f-4a87-a600-cb195a1abc0e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,18 +37,18 @@
         <counts>
           <entry key="dummy" value="18" />
           <entry key="gitignore" value="6" />
-          <entry key="java" value="15348" />
-          <entry key="md" value="2273" />
-          <entry key="xml" value="15" />
+          <entry key="java" value="15451" />
+          <entry key="md" value="2283" />
+          <entry key="xml" value="226" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15382" />
+          <entry key="JAVA" value="15492" />
           <entry key="JSON5" value="1" />
-          <entry key="Markdown" value="2238" />
+          <entry key="Markdown" value="2241" />
           <entry key="PLAIN_TEXT" value="24" />
-          <entry key="XML" value="15" />
+          <entry key="XML" value="226" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -57,7 +59,7 @@
           <entry key="java" value="62" />
           <entry key="md" value="2" />
           <entry key="publicKey" value="1" />
-          <entry key="xml" value="4" />
+          <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -67,45 +69,18 @@
           <entry key="JAVA" value="62" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="XML" value="4" />
+          <entry key="XML" value="6" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="455">
-                <caret line="190" selection-start-line="190" selection-end-line="190" />
-                <folding>
-                  <element signature="e#0#451#0" expanded="true" />
-                </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContextBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="49" column="34" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="49" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="56">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
             </state>
           </provider>
         </entry>
@@ -123,6 +98,7 @@
     <findStrings>
       <find>AssertionError</find>
       <find>System.out.p</find>
+      <find>ossrh</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,7 +125,6 @@
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/Triplet.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/utils/CertificateUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/utils/Obfuscator.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestJsonCertificateFormat.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/CertificateExpired.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/CertificateNotFound.java" />
@@ -162,9 +137,10 @@
         <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/SecurityContextBuilder.java" />
-        <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java" />
         <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestSecurityContextBuilder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -248,54 +224,6 @@
             </path>
             <path>
               <item name="appsecurity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appsecurity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="secureapp" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appsecurity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appsecurity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="secureapp" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appsecurity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appsecurity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="secureapp" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appsecurity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appsecurity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appsecurity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appsecurity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appsecurity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appsecurity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appsecurity" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -306,11 +234,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568888677754" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568892480001" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -441,15 +369,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 22m 28s.xml">
-      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 23m 22s.xml">
-      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 23m 35s.xml">
-      <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestSecurityContextBuilder_testUsingInstanceTime - 2019.09.19 at 12h 27m 05s.xml">
       <configuration name="TestSecurityContextBuilder.testUsingInstanceTime" configurationId="JUnit" />
     </history-entry>
@@ -471,12 +390,20 @@
     <history-entry file="TestCertificate_test_build_certificate - 2019.09.19 at 15h 09m 53s.xml">
       <configuration name="TestCertificate.test_build_certificate" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestObfuscator_basicWorking - 2019.09.19 at 15h 51m 54s.xml">
+      <configuration name="TestObfuscator.basicWorking" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestObfuscator_basicWorking - 2019.09.19 at 15h 53m 18s.xml">
+      <configuration name="TestObfuscator.basicWorking" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestObfuscator_basicWorking - 2019.09.19 at 15h 54m 21s.xml">
+      <configuration name="TestObfuscator.basicWorking" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="1490" y="52" width="1631" height="994" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.40646797" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24032974" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -485,17 +412,17 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27315915" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4655582" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.6638955" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32941177" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24984147" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -507,6 +434,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cv/secureapp/obfuscateInterface/RSAUtil.java" />
@@ -569,13 +500,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/appsecurity.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/github/nabhosal/secureapp/exception/SecurityContextException.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -734,11 +658,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="455">
-            <caret line="190" selection-start-line="190" selection-end-line="190" />
+          <first_editor relative-caret-position="1440">
+            <caret line="203" column="3" lean-forward="true" selection-start-line="203" selection-start-column="3" selection-end-line="203" selection-end-column="3" />
             <folding>
               <element signature="e#0#451#0" expanded="true" />
             </folding>
@@ -747,10 +678,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/github/nabhosal/secureapp/test/TestObfuscator.java">
+    <entry file="file://$USER_HOME$/.m2/settings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="56">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
         </state>
       </provider>
     </entry>
